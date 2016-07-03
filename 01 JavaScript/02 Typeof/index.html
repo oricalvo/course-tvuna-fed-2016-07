@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function g(obj) {
+            //obj = {
+            //    str: "ABC"
+            //}
+
+            obj.str = "ABC";
+        }
+
+        var obj = { str: "XXX"};
+        g(obj);
+
+        console.log(obj.str);
+
+        //var originalDigest = angular.$digest;
+        //angular.$digest = function () {
+        //    var before = new Date();
+
+        //    var res = originalDigest();
+
+        //    var after = new Date();
+
+        //    console.log(after - before);
+
+        //    return res;
+        //}
+
+        //if (typeof x == "undefined") {
+        //}
+
+        function checkBrowserCompatability() {
+            var type = typeof JSON2;
+            if (type == "undefined") {
+                console.log(type);
+
+                window.JSON2 = {
+                };
+            }
+        }
+
+        checkBrowserCompatability();
+
+        JSON2
+    </script>
+</body>
+</html>

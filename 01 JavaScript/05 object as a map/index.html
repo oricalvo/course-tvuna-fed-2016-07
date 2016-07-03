@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input id="name" /> <button id="button1">Add</button>
+
+    <script>
+        var map = new Map();
+
+        var nextHash = 1;
+
+        function mapCreate() {
+            return {};
+        }
+
+        function mapInsert(map, key, value) {
+            map[getHashCode(key)] = value;
+        }
+
+        function generateNextHash() {
+            return nextHash++;
+        }
+
+        function getHashCode(obj) {
+            if (typeof obj == "object" || typeof obj == "function") {
+                if (!obj.$$hash) {
+                    obj.$$hash = generateNextHash();
+                }
+
+                return obj.$$hash;
+            }
+            else {
+                return obj;
+            }
+        }
+
+        function mapContains(map, key) {
+            var hash = getHashCode(key);
+            return map[hash];
+        }
+
+        var map = mapCreate();
+        var ori = {};
+        var roni = {};
+
+
+
+        mapInsert(map, ori, 123);
+
+        if (mapContains(map, roni)) {
+            console.log("EXIST");
+        }
+        else {
+            console.log("NOT EXIST");
+        }
+
+
+        var map2 = [];
+        map2["abc"] = 1;
+        map2.abc = 1;
+        map2["cde"] = 2;
+        map2["XXX"] = undefined;
+        map2["4"] = 100;
+
+        console.log(map2.length);
+
+        for (var key in map2) {
+            console.log(key + ": " + map2[key]);
+        }
+
+        //if ("XXX" in map2) {
+        if (map2.hasOwnProperty("XXX")) {
+            console.log("XXX does exist");
+        }
+        else {
+            console.log("XXX does not exist");
+        }
+
+        delete map2["XXX"];
+
+        if (map2.hasOwnProperty("XXX")) {
+            console.log("XXX does exist");
+        }
+        else {
+            console.log("XXX does not exist");
+        }
+    </script>
+</body>
+</html>
