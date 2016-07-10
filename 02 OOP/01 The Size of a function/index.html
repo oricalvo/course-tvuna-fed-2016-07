@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Point(x, y) {
+            return {
+                dump: function () {
+                    console.log(x + ", " + y);
+                },
+                show: function () {
+                    console.log(x);
+                },
+            };
+        }
+
+        var pt1 = Point(5, 10);
+        var pt2 = Point(10, 20);
+
+        console.log(pt1.dump == pt2.dump);
+    </script>
+</body>
+</html>

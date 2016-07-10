@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Employee(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        Employee.prototype.dump = function () {
+            console.log(this.id + ", " + this.name);
+        }
+
+        function Programmer(id, name, progLang) {
+            Employee.call(this, id, name);
+
+            this.progLang = progLang;
+        }
+
+        Programmer.prototype = Object.create(Employee.prototype);
+
+        Programmer.prototype.dump = function () {
+            Employee.prototype.dump.call(this);
+            //super();
+
+            console.log(this.progLang);
+        }
+
+        var p = new Programmer(123, "Ori", "JavaScript");
+        p.dump();
+
+        console.log(p instanceof Employee);
+    </script>
+</body>
+</html>

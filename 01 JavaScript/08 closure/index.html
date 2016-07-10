@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        function Counter() {
+            var num = 0;
+
+            return {
+                inc: function () {
+                    ++num;
+                },
+                dec: function () {
+                    --num;
+                },
+                dump: function () {
+                    console.log(num);
+                }
+            };
+        }
+
+        var c1 = new Counter();
+        c1.inc();
+        c1.dump();
+
+        var c2 = new Counter();
+
+        c2.dump();
+        c1.dump();
+
+        //c1.dec();
+
+        function run() {
+            var name = "Ori";
+
+            dump(function (console, name) {
+                console.log(name);
+            }, name);
+        }
+
+    </script>
+</body>
+</html>
