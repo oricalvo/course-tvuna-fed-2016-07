@@ -1,0 +1,34 @@
+a {
+}
+
+site-menu a {
+}
+
+div a {
+}
+
+site-menu {
+    display: block;
+    background-color: blue;
+}
+
+site-menu button.login {
+    font-size: 2em;
+}
+
+site-menu span.title {
+}
+
+site-menu[disabled] {
+}
+
+user-details {
+    color: blue;
+}
+
+user-details span.title {
+    font-size: 1.15em;
+}
+
+.btn {
+}

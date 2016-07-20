@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul data-bind="foreach: contacts">
+        <li>
+            <span data-bind="text: name"></span>
+            <button data-bind="click: $root.remove">Delete</button>
+        </li>
+    </ul>
+
+    <input data-bind="value: newName" />
+    <button data-bind="click: add">Add</button>
+    <button data-bind="click: reset">Reset</button>
+
+    <script src="lib/knockout-latest.debug.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
